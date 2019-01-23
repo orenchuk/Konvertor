@@ -22,6 +22,7 @@ class InitialVC: UIViewController {
     // MARK: IBActions
     
     @IBAction func changeCurrency(_ sender: UIButton) {
+        performSegue(withIdentifier: "changeCurrencySegue", sender: nil)
     }
     
     @IBAction func keyboardTrigger(_ sender: UITextField) {
