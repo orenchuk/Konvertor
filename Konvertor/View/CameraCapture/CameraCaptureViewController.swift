@@ -79,6 +79,7 @@ class CameraCaptureViewController: UIViewController, AVCaptureVideoDataOutputSam
                 self.sessionQueue.resume()
             })
         default:
+            changePermission()
             print("There is no permission")
             permissionGranted = false
         }
@@ -129,5 +130,16 @@ class CameraCaptureViewController: UIViewController, AVCaptureVideoDataOutputSam
             self.previewLayer.frame = self.rootLayer.bounds
             self.rootLayer.addSublayer(self.previewLayer)
         }
+    }
+    
+    private func changePermission() {
+        let alertController = UIAlertController(title: "Please change privacy settings", message: "No permission to use camera", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Settings", style: .default, handler: { _ in
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+        }))
+        
+        self.present(alertController, animated: true, completion: nil)
     }
 }
