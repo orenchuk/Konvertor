@@ -110,12 +110,20 @@
                                     <constraint firstAttribute="trailing" secondItem="XIH-30-Ohz" secondAttribute="trailing" id="yBr-7H-oo5"/>
                                 </constraints>
                             </stackView>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aaX-Qg-bx8">
+                                <rect key="frame" x="84" y="168" width="276" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.4974863907" blue="0.074198849459999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dFF-PJ-VCe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Fy2-Vz-WEP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dFF-PJ-VCe" secondAttribute="trailing" constant="15" id="LLI-3d-cRZ"/>
+                            <constraint firstItem="aaX-Qg-bx8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="124" id="Nnt-1p-adr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aaX-Qg-bx8" secondAttribute="bottom" constant="123" id="OUJ-Aj-MEW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aaX-Qg-bx8" secondAttribute="trailing" constant="15" id="W6P-Ah-WPq"/>
                             <constraint firstItem="dFF-PJ-VCe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="d3u-s9-fX4"/>
+                            <constraint firstItem="aaX-Qg-bx8" firstAttribute="leading" secondItem="2aX-xd-aTX" secondAttribute="trailing" constant="-1" id="hBm-TT-phs"/>
                             <constraint firstItem="dFF-PJ-VCe" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="yhL-yb-HB6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -124,12 +132,14 @@
                         <outlet property="amountInput" destination="nAo-1B-z0k" id="PbK-sW-yFY"/>
                         <outlet property="amountOutput" destination="RBn-dt-EGO" id="36K-qY-eMv"/>
                         <outlet property="currencyInputButton" destination="2aX-xd-aTX" id="e2O-5X-g0V"/>
+                        <outlet property="currencyListTableView" destination="aaX-Qg-bx8" id="E6G-m8-qUj"/>
                         <outlet property="currencyOutputButton" destination="RRB-Ry-HTj" id="PZq-MQ-aQh"/>
                         <outlet property="photoDetectButton" destination="zsG-7O-ps8" id="QgY-aO-zSs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="28" y="128.57142857142858"/>
         </scene>
     </scenes>
 </document>
