@@ -24,6 +24,7 @@ class InitialVC: UIViewController {
     // MARK: IBActions
     
     @IBAction func changeCurrency(_ sender: UIButton) {
+       amountInput.resignFirstResponder()
        currencyListTableView.isHidden = !currencyListTableView.isHidden
         }
     
@@ -74,7 +75,7 @@ class InitialVC: UIViewController {
 
 extension InitialVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        return 55.0
     }
 }
 
