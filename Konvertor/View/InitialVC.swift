@@ -43,7 +43,9 @@ class InitialVC: UIViewController {
         super.viewDidLoad()
         currencyListTableView.delegate = self
         currencyListTableView.dataSource = self
-        currencyListTableView.register([CurrencyCell.reuseIdentifier])        
+        currencyListTableView.register([CurrencyCell.reuseIdentifier])
+        currencyListTableView.layer.cornerRadius = 10
+
         currencyManager.fetchCurrentCurrencyExchangeRateWith() { (result) in
             switch result {
             case .Success(let currentExchangeRate):
