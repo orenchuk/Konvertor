@@ -13,20 +13,28 @@ class CameraCaptureViewController: UIViewController, AVCaptureVideoDataOutputSam
     
     // MARK: Properties
     
+    var rootLayer: CALayer! = nil
+    
     private let session = AVCaptureSession()
     private let sessionQueue = DispatchQueue(label: "session queue") // Communicate with the session and other session objects on this queue.
+    private let videoDataOutputQueue = DispatchQueue(label: "VideoDataOutput", qos: .userInitiated, attributes: [], autoreleaseFrequency: .workItem)
+    private let videoDataOutput = AVCaptureVideoDataOutput()
+    private var previewLayer: AVCaptureVideoPreviewLayer! = nil
     private var permissionGranted = false
     
     // MARK: IBOutlets
     
-    @IBOutlet weak var previewView: PreviewView!
+    @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var captureButtonOutlet: UIButton!
     
     // MARK: IBActions
     
     @IBAction func captureButtonAction(_ sender: UIButton) {
         sessionQueue.async { [unowned self] in
+//            self.previewLayer.removeFromSuperlayer()
+            self.previewLayer = nil
             self.session.stopRunning()
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -34,8 +42,6 @@ class CameraCaptureViewController: UIViewController, AVCaptureVideoDataOutputSam
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        previewView.session = session
         
         sessionQueue.async { [unowned self] in
             self.checkPermission()
@@ -73,6 +79,7 @@ class CameraCaptureViewController: UIViewController, AVCaptureVideoDataOutputSam
                 self.sessionQueue.resume()
             })
         default:
+            print("There is no permission")
             permissionGranted = false
         }
     }
@@ -82,7 +89,7 @@ class CameraCaptureViewController: UIViewController, AVCaptureVideoDataOutputSam
         guard permissionGranted else { return }
         
         session.beginConfiguration()
-        session.sessionPreset = .high
+        session.sessionPreset = .vga640x480 // Model image size is smaller.
         
         // Input
         
@@ -96,27 +103,31 @@ class CameraCaptureViewController: UIViewController, AVCaptureVideoDataOutputSam
         session.addInput(videoDeviceInput)
         
         // Output
+
+        if session.canAddOutput(videoDataOutput) {
+            session.addOutput(videoDataOutput)
+            // Add a video data output
+            videoDataOutput.setSampleBufferDelegate(self, queue: videoDataOutputQueue)
+            videoDataOutput.alwaysDiscardsLateVideoFrames = true
+//            videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)]
+        } else {
+            print("Could not add video data output to the session")
+            session.commitConfiguration()
+            return
+        }
         
-        let output = AVCaptureVideoDataOutput()
-        guard session.canAddOutput(output) else { return }
-        session.addOutput(output)
-        
-        output.setSampleBufferDelegate(self, queue: sessionQueue)
-        output.alwaysDiscardsLateVideoFrames = true
+        let captureConnection = videoDataOutput.connection(with: .video)
+        // Always process the frames
+        captureConnection?.isEnabled = true
         
         DispatchQueue.main.async { [unowned self] in
-
-            let statusBarOrientation = UIApplication.shared.statusBarOrientation
-            var initialVideoOrientation: AVCaptureVideoOrientation = .portrait
-            if statusBarOrientation != .unknown {
-                if let videoOrientation = AVCaptureVideoOrientation(rawValue: statusBarOrientation.rawValue) {
-                    initialVideoOrientation = videoOrientation
-                }
-            }
-            
-            self.previewView.videoPreviewLayer.connection?.videoOrientation = initialVideoOrientation
-            
             self.session.commitConfiguration()
+            
+            self.previewLayer = AVCaptureVideoPreviewLayer(session: self.session)
+            self.previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+            self.rootLayer = self.previewView.layer
+            self.previewLayer.frame = self.rootLayer.bounds
+            self.rootLayer.addSublayer(self.previewLayer)
         }
     }
 }
