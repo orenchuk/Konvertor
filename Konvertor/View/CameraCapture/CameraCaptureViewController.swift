@@ -32,6 +32,11 @@ class CameraCaptureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        checkPermission()
+        
+        sessionQueue.async {
+            self.configureSession()
+        }
     }
     
     // MARK: Custom Methods
@@ -56,6 +61,8 @@ class CameraCaptureViewController: UIViewController {
     }
     
     private func configureSession() {
+        
+        guard permissionGranted else { return }
         
         session.beginConfiguration()
         
