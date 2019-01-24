@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5631366021FA20CB00120DC0 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5631365F21FA20CB00120DC0 /* Converter.swift */; };
 		7431B9CD21F99A4E009055A3 /* CurrencyListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7431B9CC21F99A4E009055A3 /* CurrencyListController.swift */; };
 		7431B9D021F99ADA009055A3 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7431B9CF21F99ADA009055A3 /* Currency.swift */; };
 		7431B9D321F99BF6009055A3 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7431B9D221F99BF6009055A3 /* UITableView+Extensions.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5631365F21FA20CB00120DC0 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		7431B9CC21F99A4E009055A3 /* CurrencyListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListController.swift; sourceTree = "<group>"; };
 		7431B9CF21F99ADA009055A3 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		7431B9D221F99BF6009055A3 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				7431B9CF21F99ADA009055A3 /* Currency.swift */,
 				748412EB21F9E1D2000E03D0 /* CurrencyList.swift */,
+				5631365F21FA20CB00120DC0 /* Converter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,7 +237,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				749503FF21F902F9006C426C /* CurrencyCell.xib in Resources */,
 				C1EC662321F9EBB6009E98F9 /* Camera.storyboard in Resources */,
 				748412C421F9CB21000E03D0 /* CurrencyCell.xib in Resources */,
 				C10F250821F7966E00597CE2 /* LaunchScreen.storyboard in Resources */,
@@ -254,9 +256,8 @@
 			files = (
 				748412C321F9CB21000E03D0 /* CurrencyCell.swift in Sources */,
 				7431B9D521F99EA8009055A3 /* UITableViewCell+Extension.swift in Sources */,
-				749503FE21F902F9006C426C /* CurrencyCell.swift in Sources */,
+				5631366021FA20CB00120DC0 /* Converter.swift in Sources */,
 				C1EC661A21F9DB16009E98F9 /* CameraCaptureViewController.swift in Sources */,
-
 				7431B9D021F99ADA009055A3 /* Currency.swift in Sources */,
 				C10F250421F7962D00597CE2 /* InitialVC.swift in Sources */,
 				7431B9D321F99BF6009055A3 /* UITableView+Extensions.swift in Sources */,
