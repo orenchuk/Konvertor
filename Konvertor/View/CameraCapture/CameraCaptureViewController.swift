@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class CameraCaptureViewController: UIViewController {
+class CameraCaptureViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     // MARK: Properties
     
@@ -25,17 +25,34 @@ class CameraCaptureViewController: UIViewController {
     // MARK: IBActions
     
     @IBAction func captureButtonAction(_ sender: UIButton) {
+        sessionQueue.async { [unowned self] in
+            self.session.stopRunning()
+        }
     }
     
     // MARK: View Controller Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        checkPermission()
         
-        sessionQueue.async {
+        previewView.session = session
+        
+        sessionQueue.async { [unowned self] in
+            self.checkPermission()
             self.configureSession()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        sessionQueue.async { [unowned self] in
+            guard self.permissionGranted else {
+                print("No permision for camera")
+                return
+            }
+            
+            self.session.startRunning()
         }
     }
     
@@ -65,6 +82,9 @@ class CameraCaptureViewController: UIViewController {
         guard permissionGranted else { return }
         
         session.beginConfiguration()
+        session.sessionPreset = .high
+        
+        // Input
         
         let videoDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
         guard let videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice!), session.canAddInput(videoDeviceInput) else {
@@ -75,5 +95,28 @@ class CameraCaptureViewController: UIViewController {
         
         session.addInput(videoDeviceInput)
         
+        // Output
+        
+        let output = AVCaptureVideoDataOutput()
+        guard session.canAddOutput(output) else { return }
+        session.addOutput(output)
+        
+        output.setSampleBufferDelegate(self, queue: sessionQueue)
+        output.alwaysDiscardsLateVideoFrames = true
+        
+        DispatchQueue.main.async { [unowned self] in
+
+            let statusBarOrientation = UIApplication.shared.statusBarOrientation
+            var initialVideoOrientation: AVCaptureVideoOrientation = .portrait
+            if statusBarOrientation != .unknown {
+                if let videoOrientation = AVCaptureVideoOrientation(rawValue: statusBarOrientation.rawValue) {
+                    initialVideoOrientation = videoOrientation
+                }
+            }
+            
+            self.previewView.videoPreviewLayer.connection?.videoOrientation = initialVideoOrientation
+            
+            self.session.commitConfiguration()
+        }
     }
 }

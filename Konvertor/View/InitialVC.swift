@@ -32,6 +32,9 @@ class InitialVC: UIViewController {
     }
     
     @IBAction func photoDetectAction(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Camera", bundle: nil)
+        let cameraVC = storyboard.instantiateViewController(withIdentifier: "CameraStoryboard")
+        self.present(cameraVC, animated: true, completion: nil)
     }
     
     //add ApiKey
