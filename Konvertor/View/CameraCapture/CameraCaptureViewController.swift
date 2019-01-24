@@ -15,15 +15,17 @@ class CameraCaptureViewController: UIViewController {
     
     private let session = AVCaptureSession()
     private let sessionQueue = DispatchQueue(label: "session queue") // Communicate with the session and other session objects on this queue.
-
+    private var permissionGranted = false
+    
     // MARK: IBOutlets
     
-    @IBOutlet private weak var previewView: PreviewView!
-    @IBOutlet private weak var captureButtonOutlet: UIButton!
+    @IBOutlet weak var previewView: PreviewView!
+    @IBOutlet weak var captureButtonOutlet: UIButton!
     
     // MARK: IBActions
     
-    @IBOutlet private weak var captureButtonAction: UIButton!
+    @IBAction func captureButtonAction(_ sender: UIButton) {
+    }
     
     // MARK: View Controller Life Cycle
 
@@ -33,6 +35,25 @@ class CameraCaptureViewController: UIViewController {
     }
     
     // MARK: Custom Methods
+    
+    private func checkPermission() {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            permissionGranted = true
+        case .notDetermined:
+            sessionQueue.suspend()
+            AVCaptureDevice.requestAccess(for: .video, completionHandler: { granted in
+                if granted {
+                    self.permissionGranted = true
+                } else {
+                    self.permissionGranted = false
+                }
+                self.sessionQueue.resume()
+            })
+        default:
+            permissionGranted = false
+        }
+    }
     
     private func configureSession() {
         

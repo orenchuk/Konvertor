@@ -141,50 +141,5 @@
             </objects>
             <point key="canvasLocation" x="28" y="128.57142857142858"/>
         </scene>
-        <!--Camera Capture View Controller-->
-        <scene sceneID="sAc-CD-ngp">
-            <objects>
-                <viewController id="SYc-p2-dMB" customClass="CameraCaptureViewController" customModule="Konvertor" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TTg-LR-KJg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHe-DR-d64">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCB-ok-UVF">
-                                <rect key="frame" x="169.66666666666666" y="636" width="75" height="75"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="II7-ET-P3E"/>
-                                    <constraint firstAttribute="width" constant="75" id="vc2-lY-BMS"/>
-                                </constraints>
-                                <state key="normal" title="Capture">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="wCB-ok-UVF" firstAttribute="centerX" secondItem="M6J-HT-Eob" secondAttribute="centerX" id="0VI-1R-1re"/>
-                            <constraint firstItem="M6J-HT-Eob" firstAttribute="bottom" secondItem="wCB-ok-UVF" secondAttribute="bottom" constant="25" id="1bu-95-Y4g"/>
-                            <constraint firstItem="GHe-DR-d64" firstAttribute="leading" secondItem="TTg-LR-KJg" secondAttribute="leading" id="8s4-FS-xVs"/>
-                            <constraint firstAttribute="trailing" secondItem="GHe-DR-d64" secondAttribute="trailing" id="Bho-0P-leI"/>
-                            <constraint firstItem="GHe-DR-d64" firstAttribute="top" secondItem="TTg-LR-KJg" secondAttribute="top" id="Ibm-Iu-vOr"/>
-                            <constraint firstAttribute="bottom" secondItem="GHe-DR-d64" secondAttribute="bottom" id="zg1-Ol-wjV"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="M6J-HT-Eob"/>
-                    </view>
-                    <connections>
-                        <outlet property="captureButtonAction" destination="wCB-ok-UVF" id="YEU-lg-qMC"/>
-                        <outlet property="captureButtonOutlet" destination="wCB-ok-UVF" id="j6S-W4-yTB"/>
-                        <outlet property="previewView" destination="GHe-DR-d64" id="2yr-57-juu"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kiF-dM-uei" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="976.81159420289862" y="128.80434782608697"/>
-        </scene>
     </scenes>
 </document>
