@@ -7,7 +7,8 @@
 //
 
 import UIKit
-class Currency{
-    let abbriviation = "USD"
-    let currencyName = "United States Dollar"
+
+struct Currency {
+    var abbriviation: String
+    var currencyName: String
 }

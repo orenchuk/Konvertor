@@ -11,8 +11,9 @@
 		7431B9D021F99ADA009055A3 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7431B9CF21F99ADA009055A3 /* Currency.swift */; };
 		7431B9D321F99BF6009055A3 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7431B9D221F99BF6009055A3 /* UITableView+Extensions.swift */; };
 		7431B9D521F99EA8009055A3 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7431B9D421F99EA8009055A3 /* UITableViewCell+Extension.swift */; };
-		749503FE21F902F9006C426C /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749503FC21F902F9006C426C /* CurrencyCell.swift */; };
-		749503FF21F902F9006C426C /* CurrencyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 749503FD21F902F9006C426C /* CurrencyCell.xib */; };
+		748412C321F9CB21000E03D0 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748412C121F9CB21000E03D0 /* CurrencyCell.swift */; };
+		748412C421F9CB21000E03D0 /* CurrencyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 748412C221F9CB21000E03D0 /* CurrencyCell.xib */; };
+		748412EC21F9E1D2000E03D0 /* CurrencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748412EB21F9E1D2000E03D0 /* CurrencyList.swift */; };
 		C10F24EF21F784DD00597CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10F24EE21F784DD00597CE2 /* AppDelegate.swift */; };
 		C10F24F621F784DE00597CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C10F24F521F784DE00597CE2 /* Assets.xcassets */; };
 		C10F250421F7962D00597CE2 /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10F250321F7962D00597CE2 /* InitialVC.swift */; };
@@ -29,8 +30,9 @@
 		7431B9CF21F99ADA009055A3 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		7431B9D221F99BF6009055A3 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		7431B9D421F99EA8009055A3 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
-		749503FC21F902F9006C426C /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
-		749503FD21F902F9006C426C /* CurrencyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyCell.xib; sourceTree = "<group>"; };
+		748412C121F9CB21000E03D0 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
+		748412C221F9CB21000E03D0 /* CurrencyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyCell.xib; sourceTree = "<group>"; };
+		748412EB21F9E1D2000E03D0 /* CurrencyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyList.swift; sourceTree = "<group>"; };
 		C10F24EB21F784DD00597CE2 /* Konvertor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Konvertor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10F24EE21F784DD00597CE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C10F24F521F784DE00597CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				7431B9CF21F99ADA009055A3 /* Currency.swift */,
+				748412EB21F9E1D2000E03D0 /* CurrencyList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -83,8 +86,8 @@
 		7495040021F90300006C426C /* CurrencyCell */ = {
 			isa = PBXGroup;
 			children = (
-				749503FC21F902F9006C426C /* CurrencyCell.swift */,
-				749503FD21F902F9006C426C /* CurrencyCell.xib */,
+				748412C121F9CB21000E03D0 /* CurrencyCell.swift */,
+				748412C221F9CB21000E03D0 /* CurrencyCell.xib */,
 			);
 			path = CurrencyCell;
 			sourceTree = "<group>";
@@ -208,7 +211,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				749503FF21F902F9006C426C /* CurrencyCell.xib in Resources */,
+				748412C421F9CB21000E03D0 /* CurrencyCell.xib in Resources */,
 				C10F250821F7966E00597CE2 /* LaunchScreen.storyboard in Resources */,
 				C10F250621F7965800597CE2 /* Main.storyboard in Resources */,
 				C10F24F621F784DE00597CE2 /* Assets.xcassets in Resources */,
@@ -222,8 +225,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				748412C321F9CB21000E03D0 /* CurrencyCell.swift in Sources */,
 				7431B9D521F99EA8009055A3 /* UITableViewCell+Extension.swift in Sources */,
-				749503FE21F902F9006C426C /* CurrencyCell.swift in Sources */,
 				7431B9D021F99ADA009055A3 /* Currency.swift in Sources */,
 				C10F250421F7962D00597CE2 /* InitialVC.swift in Sources */,
 				7431B9D321F99BF6009055A3 /* UITableView+Extensions.swift in Sources */,
@@ -231,6 +234,7 @@
 				C7311BD821F8F314001AF62C /* APIManager.swift in Sources */,
 				C10F250421F7962D00597CE2 /* InitialVC.swift in Sources */,
 				C7311BDE21F90A1E001AF62C /* CurrentCurrency.swift in Sources */,
+				748412EC21F9E1D2000E03D0 /* CurrencyList.swift in Sources */,
 				C7311BDA21F8F55B001AF62C /* ErrorManager.swift in Sources */,
 				C7311BDC21F909B7001AF62C /* APICurrencyManager.swift in Sources */,
 				C10F24EF21F784DD00597CE2 /* AppDelegate.swift in Sources */,
@@ -361,7 +365,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J92L4KR67J;
 				INFOPLIST_FILE = "$(SRCROOT)/Konvertor/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,7 +384,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J92L4KR67J;
 				INFOPLIST_FILE = "$(SRCROOT)/Konvertor/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
