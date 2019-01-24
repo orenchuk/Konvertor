@@ -13,7 +13,7 @@
         <!--Camera Capture View Controller-->
         <scene sceneID="act-wB-8Y3">
             <objects>
-                <viewController id="74f-Jb-2jA" customClass="CameraCaptureViewController" customModule="Konvertor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CameraStoryboard" id="74f-Jb-2jA" customClass="CameraCaptureViewController" customModule="Konvertor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a2E-oy-DN4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
