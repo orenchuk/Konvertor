@@ -7,9 +7,13 @@
 //
 
 import UIKit
-class CurrencyListController{
-    var currencyList:[Currency] {
-        return [Currency(), Currency(), Currency(), Currency(), Currency(), Currency(), Currency(), Currency(),
-        Currency(), Currency(), Currency(), Currency(), Currency(), Currency(), Currency(), Currency()]
+class CurrencyListController {
+    var currencyList: [Currency] {
+        var permanentList = [Currency]()
+        for curName in currencyEnum.allCases {
+            permanentList.append(Currency(abbriviation: curName.rawValue, currencyName: currencyDict[curName.rawValue]!))
+        }
+        return permanentList
     }
+   
 }
