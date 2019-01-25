@@ -6,7 +6,6 @@
 //  Copyright © 2019 Perchiki. All rights reserved.
 //
 
-
 class Converter {
     
     static func convert(inputCurrency: String, amount: Double, outputCurrency: String, currency: CurrentExchangeRate) -> String {
