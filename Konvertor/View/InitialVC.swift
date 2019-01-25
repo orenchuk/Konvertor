@@ -10,6 +10,8 @@ import UIKit
 
 class InitialVC: UIViewController {
     let controller = CurrencyListController()
+    var exchangeRate: CurrentExchangeRate?
+    var currentButtonPressed: UIButton?
     
     // MARK: Properties
     
@@ -24,8 +26,21 @@ class InitialVC: UIViewController {
     // MARK: IBActions
     
     @IBAction func changeCurrency(_ sender: UIButton) {
-       currencyListTableView.isHidden = !currencyListTableView.isHidden
+        amountInput.resignFirstResponder()
+        if currentButtonPressed == nil{
+            currentButtonPressed = sender
         }
+        if currentButtonPressed == sender || currencyListTableView.isHidden == true{
+            currencyListTableView.isHidden = !currencyListTableView.isHidden
+        }
+        currentButtonPressed = sender
+
+        
+        
+        
+        
+        
+    }
     
     
     @IBAction func keyboardTrigger(_ sender: UITextField) {
@@ -37,6 +52,20 @@ class InitialVC: UIViewController {
         self.present(cameraVC, animated: true, completion: nil)
     }
     
+ 
+    @IBAction func inputChanged(_ sender: UITextField) {
+        if let input = Double(amountInput.text!){
+        amountOutput.text = convert(inputCurrency: currencyInputButton.currentTitle!,
+                                    amount: input,
+                                    outputCurrency: currencyOutputButton.currentTitle!,
+                                    currency: exchangeRate!)
+        }else{
+            amountOutput.text = " "
+        }
+            
+       
+    }
+    
     //add ApiKey
     lazy var currencyManager = APICurrencyManager(apiKey: "e08a5295b1f345d4b4aeb1d8d1dd0055")
     
@@ -44,11 +73,17 @@ class InitialVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Add padding to input UITextField
+        let View = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 15.0, height: 0.0))
+        amountInput.leftView = View
+        amountInput.rightView = View
+        amountInput.leftViewMode = .always
+        //Adding cells to currency pop-up
         currencyListTableView.delegate = self
         currencyListTableView.dataSource = self
         currencyListTableView.register([CurrencyCell.reuseIdentifier])
         currencyListTableView.layer.cornerRadius = 10
-
+        //pulling reuest to API
         currencyManager.fetchCurrentCurrencyExchangeRateWith() { (result) in
             switch result {
             case .Success(let currentExchangeRate):
@@ -56,6 +91,7 @@ class InitialVC: UIViewController {
                 
                 // For Sasha API library:
 //                print(currentExchangeRate)
+                self.exchangeRate = currentExchangeRate
                 print("Base currency:", currentExchangeRate.base)
                 print("UAH rate:",  currentExchangeRate.rates["UAH"] ?? "N/A")
                 //
@@ -77,7 +113,7 @@ class InitialVC: UIViewController {
 
 extension InitialVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        return 55.0
     }
 }
 
@@ -93,6 +129,13 @@ extension InitialVC: UITableViewDataSource{
         cell.currencyName.text = currentCurrency.currencyName
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(controller.currencyList[indexPath.row].abbriviation)
+        currentButtonPressed!.setTitle(controller.currencyList[indexPath.row].abbriviation, for: .normal)
+        inputChanged(amountInput)
+        
+    }
+
 }
+
 
