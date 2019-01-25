@@ -6,7 +6,6 @@
 //  Copyright © 2019 Perchiki. All rights reserved.
 //
 
-
 class Converter {
     
     static func convert(inputCurrency: String, amount: Double, outputCurrency: String, currency: CurrentExchangeRate) -> String {
@@ -14,10 +13,8 @@ class Converter {
         let fullPriceInDollarForInputCurrency = amount / pricePerDollarForInputCurrency
         let pricePerDollarForOutputCurrency = currency.rates[outputCurrency]!
         let result = fullPriceInDollarForInputCurrency * pricePerDollarForOutputCurrency
+      
         return String(format: "%.2f", result)
         }
 }
 
-
-
-//convert(inputCurrency: "UAH", amount: 1000, outputCurrency: "USD")
