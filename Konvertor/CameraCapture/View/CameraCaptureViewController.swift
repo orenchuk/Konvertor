@@ -1,0 +1,48 @@
+//
+//  CameraCaptureViewController.swift
+//  Konvertor
+//
+//  Created by Yevhenii Orenchuk on 1/24/19.
+//  Copyright © 2019 Perchiki. All rights reserved.
+//
+
+import UIKit
+import AVFoundation
+
+class CameraCaptureViewController: UIViewController {
+    
+    // MARK: Properties
+    
+    let cameraController = CameraCaptureController()
+    
+    // MARK: IBOutlets
+    
+    @IBOutlet private weak var previewView: UIView!
+    @IBOutlet private weak var captureButtonOutlet: UIButton!
+    
+    // MARK: IBActions
+    
+    @IBAction func captureButtonAction(_ sender: UIButton) {
+        cameraController.session.stopRunning()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: View Controller Life Cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        cameraController.configureSession()
+        
+        if let layer = cameraController.previewLayer {
+            layer.position = view.layer.position
+            layer.frame = view.frame
+            previewView.layer.addSublayer(layer)
+            cameraController.session.startRunning()
+        } else {
+            print("Camera layer wasn't set yet")
+        }
+        
+    }
+    
+}

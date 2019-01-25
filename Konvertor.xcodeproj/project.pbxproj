@@ -18,9 +18,10 @@
 		7484132B21FB22D9000E03D0 /* AddNewCurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484132A21FB22D9000E03D0 /* AddNewCurrencyController.swift */; };
 		C10F24EF21F784DD00597CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10F24EE21F784DD00597CE2 /* AppDelegate.swift */; };
 		C10F24F621F784DE00597CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C10F24F521F784DE00597CE2 /* Assets.xcassets */; };
-		C10F250421F7962D00597CE2 /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10F250321F7962D00597CE2 /* InitialVC.swift */; };
 		C10F250621F7965800597CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C10F250521F7965800597CE2 /* Main.storyboard */; };
 		C10F250821F7966E00597CE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C10F250721F7966E00597CE2 /* LaunchScreen.storyboard */; };
+		C1AEB7A521FB3CEA00120C84 /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10F250321F7962D00597CE2 /* InitialVC.swift */; };
+		C1AEB7A921FB76A800120C84 /* CameraCaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AEB7A821FB76A800120C84 /* CameraCaptureController.swift */; };
 		C1EC661A21F9DB16009E98F9 /* CameraCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EC661921F9DB16009E98F9 /* CameraCaptureViewController.swift */; };
 		C1EC661F21F9E824009E98F9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C1EC661E21F9E824009E98F9 /* README.md */; };
 		C1EC662121F9E83C009E98F9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C1EC662021F9E83C009E98F9 /* .gitignore */; };
@@ -48,6 +49,7 @@
 		C10F250321F7962D00597CE2 /* InitialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
 		C10F250521F7965800597CE2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C10F250721F7966E00597CE2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C1AEB7A821FB76A800120C84 /* CameraCaptureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureController.swift; sourceTree = "<group>"; };
 		C1EC661921F9DB16009E98F9 /* CameraCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureViewController.swift; sourceTree = "<group>"; };
 		C1EC661E21F9E824009E98F9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C1EC662021F9E83C009E98F9 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		C10F24ED21F784DD00597CE2 /* Konvertor */ = {
 			isa = PBXGroup;
 			children = (
+				C1EC661B21F9E36C009E98F9 /* CameraCapture */,
 				7431B9D121F99BC5009055A3 /* Extensions */,
 				7431B9CE21F99ACA009055A3 /* Model */,
 				7431B9CB21F99A34009055A3 /* Controller */,
@@ -162,7 +165,6 @@
 		C10F250221F795A500597CE2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C1EC661B21F9E36C009E98F9 /* CameraCapture */,
 				C10F250321F7962D00597CE2 /* InitialVC.swift */,
 				C10F250521F7965800597CE2 /* Main.storyboard */,
 				7495040021F90300006C426C /* CurrencyCell */,
@@ -170,11 +172,28 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		C1EC661B21F9E36C009E98F9 /* CameraCapture */ = {
+		C1AEB7A621FB762D00120C84 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				C1EC661921F9DB16009E98F9 /* CameraCaptureViewController.swift */,
 				C1EC662221F9EBB6009E98F9 /* Camera.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C1AEB7A721FB765900120C84 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C1AEB7A821FB76A800120C84 /* CameraCaptureController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C1EC661B21F9E36C009E98F9 /* CameraCapture */ = {
+			isa = PBXGroup;
+			children = (
+				C1AEB7A721FB765900120C84 /* Controller */,
+				C1AEB7A621FB762D00120C84 /* View */,
 			);
 			path = CameraCapture;
 			sourceTree = "<group>";
@@ -254,16 +273,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1AEB7A521FB3CEA00120C84 /* InitialVC.swift in Sources */,
 				748412C321F9CB21000E03D0 /* CurrencyCell.swift in Sources */,
 				7431B9D521F99EA8009055A3 /* UITableViewCell+Extension.swift in Sources */,
 				5631366021FA20CB00120DC0 /* Converter.swift in Sources */,
 				C1EC661A21F9DB16009E98F9 /* CameraCaptureViewController.swift in Sources */,
 				7431B9D021F99ADA009055A3 /* Currency.swift in Sources */,
-				C10F250421F7962D00597CE2 /* InitialVC.swift in Sources */,
 				7431B9D321F99BF6009055A3 /* UITableView+Extensions.swift in Sources */,
 				7431B9CD21F99A4E009055A3 /* CurrencyListController.swift in Sources */,
 				C7311BD821F8F314001AF62C /* APIManager.swift in Sources */,
-				C10F250421F7962D00597CE2 /* InitialVC.swift in Sources */,
+				C1AEB7A921FB76A800120C84 /* CameraCaptureController.swift in Sources */,
 				C7311BDE21F90A1E001AF62C /* CurrentCurrency.swift in Sources */,
 				7484132B21FB22D9000E03D0 /* AddNewCurrencyController.swift in Sources */,
 				748412EC21F9E1D2000E03D0 /* CurrencyList.swift in Sources */,
@@ -397,14 +416,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J92L4KR67J;
+				DEVELOPMENT_TEAM = 648A3N24L8;
 				INFOPLIST_FILE = "$(SRCROOT)/Konvertor/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ucu.ios.Konvertor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ucu.ios.Konvertor.zhenia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -416,14 +435,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J92L4KR67J;
+				DEVELOPMENT_TEAM = 648A3N24L8;
 				INFOPLIST_FILE = "$(SRCROOT)/Konvertor/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ucu.ios.Konvertor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ucu.ios.Konvertor.zhenia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

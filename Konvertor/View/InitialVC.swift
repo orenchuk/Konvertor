@@ -9,13 +9,16 @@
 import UIKit
 
 class InitialVC: UIViewController {
-    let controller = CurrencyListController()
-    var exchangeRate: CurrentExchangeRate?
-    var currentButtonPressed: UIButton?
     
     // MARK: Properties
     
+    let controller = CurrencyListController()
+    var exchangeRate: CurrentExchangeRate?
+    var currentButtonPressed: UIButton?
+    private let cameraController = CameraCaptureController()
+    
     // MARK: IBOutlets
+    
     @IBOutlet weak var currencyInputButton: UIButton!
     @IBOutlet weak var currencyOutputButton: UIButton!
     @IBOutlet weak var amountInput: UITextField!
@@ -34,14 +37,7 @@ class InitialVC: UIViewController {
             currencyListTableView.isHidden = !currencyListTableView.isHidden
         }
         currentButtonPressed = sender
-
-        
-        
-        
-        
-        
-    }
-    
+    }    
     
     @IBAction func keyboardTrigger(_ sender: UITextField) {
     }
@@ -49,7 +45,22 @@ class InitialVC: UIViewController {
     @IBAction func photoDetectAction(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Camera", bundle: nil)
         let cameraVC = storyboard.instantiateViewController(withIdentifier: "CameraStoryboard")
-        self.present(cameraVC, animated: true, completion: nil)
+        
+        cameraController.checkPermission { [unowned self] granted in
+            
+            if let granted = granted {
+                if granted {
+                    DispatchQueue.main.async {
+                        self.present(cameraVC, animated: true, completion: nil)
+                    }
+                } else {
+                    print("InitialVC: no permission to camera")
+                    self.cameraController.changePermission(viewController: self)
+                }
+            } else {
+                print("Camera access denied")
+            }
+        }
     }
     
  
@@ -59,7 +70,7 @@ class InitialVC: UIViewController {
                                     amount: input,
                                     outputCurrency: currencyOutputButton.currentTitle!,
                                     currency: exchangeRate!)
-        }else{
+        } else {
             amountOutput.text = " "
         }
             

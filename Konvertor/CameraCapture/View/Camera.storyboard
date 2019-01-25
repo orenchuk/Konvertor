@@ -15,21 +15,23 @@
             <objects>
                 <viewController storyboardIdentifier="CameraStoryboard" id="74f-Jb-2jA" customClass="CameraCaptureViewController" customModule="Konvertor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a2E-oy-DN4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3M-D1-5iV">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcA-SZ-rM8">
-                                <rect key="frame" x="169.66666666666666" y="636" width="75" height="75"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="137.5" y="592" width="100" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="w28-iw-XvQ"/>
-                                    <constraint firstAttribute="height" constant="75" id="xyP-IK-ahI"/>
+                                    <constraint firstAttribute="width" constant="100" id="w28-iw-XvQ"/>
+                                    <constraint firstAttribute="height" constant="50" id="xyP-IK-ahI"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="captureButtonAction:" destination="74f-Jb-2jA" eventType="touchUpInside" id="E9R-RY-ZFg"/>
                                 </connections>
