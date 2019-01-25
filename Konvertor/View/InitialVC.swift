@@ -55,7 +55,7 @@ class InitialVC: UIViewController {
  
     @IBAction func inputChanged(_ sender: UITextField) {
         if let input = Double(amountInput.text!){
-        amountOutput.text = convert(inputCurrency: currencyInputButton.currentTitle!,
+        amountOutput.text = Converter.convert(inputCurrency: currencyInputButton.currentTitle!,
                                     amount: input,
                                     outputCurrency: currencyOutputButton.currentTitle!,
                                     currency: exchangeRate!)
@@ -133,6 +133,7 @@ extension InitialVC: UITableViewDataSource{
         print(controller.currencyList[indexPath.row].abbriviation)
         currentButtonPressed!.setTitle(controller.currencyList[indexPath.row].abbriviation, for: .normal)
         inputChanged(amountInput)
+        currencyListTableView.isHidden = true
         
     }
 
