@@ -14,8 +14,7 @@ class Converter {
         let fullPriceInDollarForInputCurrency = amount / pricePerDollarForInputCurrency
         let pricePerDollarForOutputCurrency = currency.rates[outputCurrency]!
         let result = fullPriceInDollarForInputCurrency * pricePerDollarForOutputCurrency
-        
-        return String(result)
+        return String(format: "%.2f", result)
         }
 }
 
