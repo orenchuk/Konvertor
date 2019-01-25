@@ -18,6 +18,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ZC-Ek-tXx">
+                                <rect key="frame" x="84" y="144" width="315" height="469"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="Ae2-oA-P2v">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="469"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abriviation" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLc-Rs-Exc">
+                                                <rect key="frame" x="103.66666666666666" y="0.0" width="108" height="25.333333333333332"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lvT-vj-g1T">
+                                                <rect key="frame" x="145" y="64.333333333333343" width="25" height="58"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hrv-J5-RA9">
+                                                <rect key="frame" x="80.666666666666671" y="161.33333333333331" width="153.66666666666663" height="25.333333333333343"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v7U-nN-vMw">
+                                                <rect key="frame" x="145" y="225.66666666666669" width="25" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Per 1 Dollar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYJ-j6-HhE">
+                                                <rect key="frame" x="102.33333333333334" y="294.66666666666669" width="110.66666666666666" height="25.333333333333314"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aSX-GA-xNl">
+                                                <rect key="frame" x="145" y="359" width="25" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3F7-1S-6e3">
+                                                <rect key="frame" x="136" y="428" width="43" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <state key="normal" title="Add"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Ae2-oA-P2v" secondAttribute="bottom" id="EyO-FD-l6u"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ae2-oA-P2v" secondAttribute="trailing" id="Ymj-v1-Uo3"/>
+                                    <constraint firstItem="Ae2-oA-P2v" firstAttribute="leading" secondItem="7ZC-Ek-tXx" secondAttribute="leading" id="gMK-8s-AdH"/>
+                                    <constraint firstItem="Ae2-oA-P2v" firstAttribute="top" secondItem="7ZC-Ek-tXx" secondAttribute="top" id="nLj-zL-qar"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dFF-PJ-VCe">
                                 <rect key="frame" x="15" y="303" width="384" height="150"/>
                                 <subviews>
@@ -132,7 +192,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aaX-Qg-bx8" secondAttribute="bottom" constant="123" id="OUJ-Aj-MEW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aaX-Qg-bx8" secondAttribute="trailing" constant="15" id="W6P-Ah-WPq"/>
                             <constraint firstItem="dFF-PJ-VCe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="d3u-s9-fX4"/>
+                            <constraint firstItem="7ZC-Ek-tXx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="124" id="fUM-Ng-Taq"/>
                             <constraint firstItem="aaX-Qg-bx8" firstAttribute="leading" secondItem="2aX-xd-aTX" secondAttribute="trailing" constant="-1" id="hBm-TT-phs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7ZC-Ek-tXx" secondAttribute="trailing" constant="15" id="kAk-L4-qrb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7ZC-Ek-tXx" secondAttribute="bottom" constant="123" id="r9X-JD-F1n"/>
+                            <constraint firstItem="7ZC-Ek-tXx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="84" id="thb-KI-Ufn"/>
                             <constraint firstItem="dFF-PJ-VCe" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="yhL-yb-HB6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -148,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28" y="128.57142857142858"/>
+            <point key="canvasLocation" x="27.536231884057973" y="127.98913043478262"/>
         </scene>
     </scenes>
 </document>
