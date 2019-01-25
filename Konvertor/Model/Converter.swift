@@ -19,4 +19,3 @@ class Converter {
 
 
 
-//convert(inputCurrency: "UAH", amount: 1000, outputCurrency: "USD")
