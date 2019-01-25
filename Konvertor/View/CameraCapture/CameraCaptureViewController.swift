@@ -16,26 +16,24 @@ class CameraCaptureViewController: UIViewController, AVCaptureVideoDataOutputSam
     var rootLayer: CALayer! = nil
     
     private let session = AVCaptureSession()
-    private let sessionQueue = DispatchQueue(label: "session queue") // Communicate with the session and other session objects on this queue.
-    private let videoDataOutputQueue = DispatchQueue(label: "VideoDataOutput", qos: .userInitiated, attributes: [], autoreleaseFrequency: .workItem)
+    private let videoDataOutputQueue = DispatchQueue(label: "VideoDataOutput")
+    
     private let videoDataOutput = AVCaptureVideoDataOutput()
     private var previewLayer: AVCaptureVideoPreviewLayer! = nil
     private var permissionGranted = false
     
     // MARK: IBOutlets
     
-    @IBOutlet weak var previewView: UIView!
-    @IBOutlet weak var captureButtonOutlet: UIButton!
+    @IBOutlet private weak var previewView: UIView!
+    @IBOutlet private weak var captureButtonOutlet: UIButton!
     
     // MARK: IBActions
     
     @IBAction func captureButtonAction(_ sender: UIButton) {
-        sessionQueue.async { [unowned self] in
-//            self.previewLayer.removeFromSuperlayer()
-            self.previewLayer = nil
-            self.session.stopRunning()
-            self.dismiss(animated: true, completion: nil)
-        }
+//        self.previewLayer.removeFromSuperlayer()
+        self.previewLayer = nil
+        self.session.stopRunning()
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: View Controller Life Cycle
@@ -43,23 +41,20 @@ class CameraCaptureViewController: UIViewController, AVCaptureVideoDataOutputSam
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sessionQueue.async { [unowned self] in
-            self.checkPermission()
-            self.configureSession()
-        }
+        checkPermission()
+        configureSession()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        sessionQueue.async { [unowned self] in
-            guard self.permissionGranted else {
-                print("No permision for camera")
-                return
-            }
-            
-            self.session.startRunning()
+
+        guard self.permissionGranted else {
+            print("No permision for camera")
+            return
         }
+        
+        self.session.startRunning()
+        
     }
     
     // MARK: Custom Methods
@@ -69,14 +64,12 @@ class CameraCaptureViewController: UIViewController, AVCaptureVideoDataOutputSam
         case .authorized:
             permissionGranted = true
         case .notDetermined:
-            sessionQueue.suspend()
             AVCaptureDevice.requestAccess(for: .video, completionHandler: { granted in
                 if granted {
                     self.permissionGranted = true
                 } else {
                     self.permissionGranted = false
                 }
-                self.sessionQueue.resume()
             })
         default:
             changePermission()
@@ -121,15 +114,15 @@ class CameraCaptureViewController: UIViewController, AVCaptureVideoDataOutputSam
         // Always process the frames
         captureConnection?.isEnabled = true
         
-        DispatchQueue.main.async { [unowned self] in
-            self.session.commitConfiguration()
-            
-            self.previewLayer = AVCaptureVideoPreviewLayer(session: self.session)
-            self.previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            self.rootLayer = self.previewView.layer
-            self.previewLayer.frame = self.rootLayer.bounds
-            self.rootLayer.addSublayer(self.previewLayer)
-        }
+        session.commitConfiguration()
+        
+        previewView.layer.position = view.layer.position
+        
+        previewLayer = AVCaptureVideoPreviewLayer(session: session)
+        previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        rootLayer = previewView.layer
+        previewLayer.frame = rootLayer.bounds
+        rootLayer.addSublayer(previewLayer)
     }
     
     private func changePermission() {
