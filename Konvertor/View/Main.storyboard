@@ -103,9 +103,10 @@
                                                 <rect key="frame" x="70" y="0.0" width="274" height="70"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="light"/>
                                                 <connections>
+                                                    <action selector="inputChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="Pka-w6-gsg"/>
                                                     <action selector="keyboardTrigger:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="P0i-HN-SWd"/>
                                                 </connections>
                                             </textField>
@@ -138,26 +139,34 @@
                                                     <constraint firstAttribute="width" constant="70" id="ceQ-7K-yGR"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                                <state key="normal" title="UAH">
+                                                <state key="normal" title="JPY">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="changeCurrency:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7eJ-dl-1iA"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBn-dt-EGO">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TB7-Bv-Y2C">
                                                 <rect key="frame" x="70" y="0.0" width="314" height="70"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBn-dt-EGO">
+                                                        <rect key="frame" x="15" y="0.0" width="289" height="70"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                                            </label>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="RBn-dt-EGO" secondAttribute="bottom" id="5hv-8Q-IIM"/>
+                                                    <constraint firstItem="RBn-dt-EGO" firstAttribute="leading" secondItem="TB7-Bv-Y2C" secondAttribute="leading" constant="15" id="i1b-wH-HMu"/>
+                                                    <constraint firstItem="RBn-dt-EGO" firstAttribute="top" secondItem="TB7-Bv-Y2C" secondAttribute="top" id="mzE-36-RDY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="RBn-dt-EGO" secondAttribute="trailing" constant="10" id="wkt-1E-SOa"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="RBn-dt-EGO" firstAttribute="bottom" secondItem="RRB-Ry-HTj" secondAttribute="bottom" id="6Eb-Pf-fB5"/>
-                                            <constraint firstItem="RBn-dt-EGO" firstAttribute="top" secondItem="xLF-TO-a7j" secondAttribute="top" id="IkK-2S-ZuJ"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
