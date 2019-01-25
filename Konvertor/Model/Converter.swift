@@ -8,16 +8,13 @@
 
 class Converter {
     
-    func convert(inputCurrency: String, amount: Double, outputCurrency: String, currency: CurrentExchangeRate) -> Double {
+    static func convert(inputCurrency: String, amount: Double, outputCurrency: String, currency: CurrentExchangeRate) -> String {
         let pricePerDollarForInputCurrency = currency.rates[inputCurrency]!
         let fullPriceInDollarForInputCurrency = amount / pricePerDollarForInputCurrency
         let pricePerDollarForOutputCurrency = currency.rates[outputCurrency]!
         let result = fullPriceInDollarForInputCurrency * pricePerDollarForOutputCurrency
-        
-        return result
+        return String(result)
         }
 }
-
-
 
 //convert(inputCurrency: "UAH", amount: 1000, outputCurrency: "USD")
