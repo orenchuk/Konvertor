@@ -8,6 +8,8 @@
 
 import Foundation
 
-public let PerchikiNetworkingErrorDomain = "PerchikiNetworkingError"
-public let MissingHTTPResponseError = 100
-public let UnexpectedResponseError = 200
+struct ErrorManager {
+    static let PerchikiNetworkingErrorDomain = "PerchikiNetworkingError"
+    static let MissingHTTPResponseError = 100
+    static let UnexpectedResponseError = 200
+}
