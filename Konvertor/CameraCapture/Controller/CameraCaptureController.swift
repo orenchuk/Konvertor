@@ -123,7 +123,7 @@ extension CameraCaptureController: AVCaptureVideoDataOutputSampleBufferDelegate 
                 requestOptions = [.cameraIntrinsics:camData]
             }
             
-            let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .up, options: requestOptions)
+            let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .right, options: requestOptions)
             
             do {
                 try imageRequestHandler.perform(liveTextDetection.requests)

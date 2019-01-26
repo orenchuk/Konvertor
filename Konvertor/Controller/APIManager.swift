@@ -45,7 +45,7 @@ extension APIManager {
                 let userInfo = [
                     NSLocalizedDescriptionKey: NSLocalizedString("Missing HTTP Response", comment: "")
                 ]
-                let error = NSError(domain: PerchikiNetworkingErrorDomain, code: 100, userInfo: userInfo)
+                let error = NSError(domain: ErrorManager.PerchikiNetworkingErrorDomain, code: 100, userInfo: userInfo)
                 
                 completionHandler(nil, nil, error)
                 return
@@ -67,7 +67,7 @@ extension APIManager {
                 default:
                     print("We have got response status \(HTTPResponse.statusCode)")
                     
-                    let error = NSError(domain: PerchikiNetworkingErrorDomain, code: HTTPResponse.statusCode)
+                    let error = NSError(domain: ErrorManager.PerchikiNetworkingErrorDomain, code: HTTPResponse.statusCode)
                     completionHandler(nil, nil, error)
                 }
             }
@@ -89,7 +89,7 @@ extension APIManager {
                 if let value = parse(json) {
                     completionHandler(.Success(value))
                 } else {
-                    let error = NSError(domain: PerchikiNetworkingErrorDomain, code: 200, userInfo: nil)
+                    let error = NSError(domain: ErrorManager.PerchikiNetworkingErrorDomain, code: 200, userInfo: nil)
                     completionHandler(.Failure(error))
                 }
                 
