@@ -8,16 +8,29 @@
 
 import UIKit
 import AVFoundation
+import Vision
 
-class CameraCaptureController: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
+class CameraCaptureController: NSObject {
     
     // MARK: Properties
     
-    var previewLayer: AVCaptureVideoPreviewLayer? = nil
+    var preview: UIView?
+    var previewLayer: AVCaptureVideoPreviewLayer?
     let session = AVCaptureSession()
+    private let liveTextDetection: LiveTextDetectionController?
     
     private let videoDataOutputQueue = DispatchQueue(label: "VideoDataOutput")
-    private let videoDataOutput = AVCaptureVideoDataOutput()
+    
+    override init() {
+        self.preview = nil
+        self.liveTextDetection = nil
+    }
+    
+    init(preview: UIView) {
+        self.preview = preview
+        self.liveTextDetection = LiveTextDetectionController(preview: preview)
+        self.liveTextDetection?.startTextDetection()
+    }
     
     // MARK: Public methods
     
@@ -69,13 +82,18 @@ class CameraCaptureController: NSObject, AVCaptureVideoDataOutputSampleBufferDel
         
         // Output
         
+        let videoDataOutput = AVCaptureVideoDataOutput()
+        
         if session.canAddOutput(videoDataOutput) {
-            session.addOutput(videoDataOutput)
             
             // Add a video data output
             
+            videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)]
             videoDataOutput.setSampleBufferDelegate(self, queue: videoDataOutputQueue)
             videoDataOutput.alwaysDiscardsLateVideoFrames = true
+            
+            session.addOutput(videoDataOutput)
+            
         } else {
             print("Could not add video data output to the session")
             session.commitConfiguration()
@@ -92,4 +110,30 @@ class CameraCaptureController: NSObject, AVCaptureVideoDataOutputSampleBufferDel
     }
 }
 
-
+extension CameraCaptureController: AVCaptureVideoDataOutputSampleBufferDelegate {
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        if let liveTextDetection = liveTextDetection {
+            guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
+                return
+            }
+            
+            var requestOptions: [VNImageOption : Any] = [:]
+            
+            if let camData = CMGetAttachment(sampleBuffer, key: kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, attachmentModeOut: nil) {
+                requestOptions = [.cameraIntrinsics:camData]
+            }
+            
+            let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .up, options: requestOptions)
+            
+            do {
+                try imageRequestHandler.perform(liveTextDetection.requests)
+            } catch {
+                print(error)
+            }
+        } else {
+            print("TextDetect is nill")
+        }
+        
+    }
+    
+}
