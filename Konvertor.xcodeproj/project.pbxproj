@@ -22,6 +22,7 @@
 		C10F250821F7966E00597CE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C10F250721F7966E00597CE2 /* LaunchScreen.storyboard */; };
 		C1AEB7A521FB3CEA00120C84 /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10F250321F7962D00597CE2 /* InitialVC.swift */; };
 		C1AEB7A921FB76A800120C84 /* CameraCaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AEB7A821FB76A800120C84 /* CameraCaptureController.swift */; };
+		C1AEB7AE21FBB8AA00120C84 /* LiveTextDetectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AEB7AD21FBB8AA00120C84 /* LiveTextDetectionController.swift */; };
 		C1EC661A21F9DB16009E98F9 /* CameraCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EC661921F9DB16009E98F9 /* CameraCaptureViewController.swift */; };
 		C1EC661F21F9E824009E98F9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C1EC661E21F9E824009E98F9 /* README.md */; };
 		C1EC662121F9E83C009E98F9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C1EC662021F9E83C009E98F9 /* .gitignore */; };
@@ -50,6 +51,7 @@
 		C10F250521F7965800597CE2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C10F250721F7966E00597CE2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1AEB7A821FB76A800120C84 /* CameraCaptureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureController.swift; sourceTree = "<group>"; };
+		C1AEB7AD21FBB8AA00120C84 /* LiveTextDetectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTextDetectionController.swift; sourceTree = "<group>"; };
 		C1EC661921F9DB16009E98F9 /* CameraCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureViewController.swift; sourceTree = "<group>"; };
 		C1EC661E21F9E824009E98F9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C1EC662021F9E83C009E98F9 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		C10F24ED21F784DD00597CE2 /* Konvertor */ = {
 			isa = PBXGroup;
 			children = (
+				C1AEB7AA21FBB83100120C84 /* TextDetection */,
 				C1EC661B21F9E36C009E98F9 /* CameraCapture */,
 				7431B9D121F99BC5009055A3 /* Extensions */,
 				7431B9CE21F99ACA009055A3 /* Model */,
@@ -185,6 +188,22 @@
 			isa = PBXGroup;
 			children = (
 				C1AEB7A821FB76A800120C84 /* CameraCaptureController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C1AEB7AA21FBB83100120C84 /* TextDetection */ = {
+			isa = PBXGroup;
+			children = (
+				C1AEB7AB21FBB88E00120C84 /* Controller */,
+			);
+			path = TextDetection;
+			sourceTree = "<group>";
+		};
+		C1AEB7AB21FBB88E00120C84 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C1AEB7AD21FBB8AA00120C84 /* LiveTextDetectionController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -284,6 +303,7 @@
 				C7311BD821F8F314001AF62C /* APIManager.swift in Sources */,
 				C1AEB7A921FB76A800120C84 /* CameraCaptureController.swift in Sources */,
 				C7311BDE21F90A1E001AF62C /* CurrentCurrency.swift in Sources */,
+				C1AEB7AE21FBB8AA00120C84 /* LiveTextDetectionController.swift in Sources */,
 				7484132B21FB22D9000E03D0 /* AddNewCurrencyController.swift in Sources */,
 				748412EC21F9E1D2000E03D0 /* CurrencyList.swift in Sources */,
 				C7311BDA21F8F55B001AF62C /* ErrorManager.swift in Sources */,

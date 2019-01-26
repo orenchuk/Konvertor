@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import AVFoundation
 
 class CameraCaptureViewController: UIViewController {
     
     // MARK: Properties
     
-    let cameraController = CameraCaptureController()
+    private var cameraController: CameraCaptureController!
     
     // MARK: IBOutlets
     
@@ -31,7 +30,7 @@ class CameraCaptureViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        cameraController = CameraCaptureController(preview: previewView)
         cameraController.configureSession()
         
         if let layer = cameraController.previewLayer {
