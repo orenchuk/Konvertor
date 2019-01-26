@@ -95,6 +95,14 @@ class InitialVC: UIViewController {
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 1.1, y: 0.5)
         view.layer.insertSublayer(gradientLayer, at: 0)
+        //changing photoDetecButton image size
+        let float = CGFloat(55)
+        let extra = CGFloat(2.5)
+        photoDetectButton.imageEdgeInsets = UIEdgeInsets(top: float,
+                                                         left: float + extra,
+                                                         bottom: float,
+                                                         right: float + extra)
+
         
         //Add padding to input UITextField
         let View = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 15.0, height: 0.0))
