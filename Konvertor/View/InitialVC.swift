@@ -84,6 +84,18 @@ class InitialVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Add gradient background layer
+        
+        let gradientLayer = CAGradientLayer()
+        let rightColor = UIColor(red: 255.0/255.0, green: 175.0/255.0, blue: 189.0/255.0, alpha: 1.0).cgColor
+        let leftColor = UIColor(red: 255.0/255.0, green: 195.0/255.0, blue: 160.0/255.0, alpha: 1.0).cgColor
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [leftColor, rightColor]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1.1, y: 0.5)
+        view.layer.insertSublayer(gradientLayer, at: 0)
+        
         //Add padding to input UITextField
         let View = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 15.0, height: 0.0))
         amountInput.leftView = View
