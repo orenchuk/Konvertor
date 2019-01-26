@@ -127,13 +127,21 @@
                                 <rect key="frame" x="84" y="144" width="315" height="469"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Konvertor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXU-ED-eYy">
+                                <rect key="frame" x="135.33333333333337" y="70" width="143.66666666666663" height="44"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.41960784313725491" green="0.67843137254901964" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dFF-PJ-VCe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Fy2-Vz-WEP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dFF-PJ-VCe" secondAttribute="trailing" constant="15" id="LLI-3d-cRZ"/>
                             <constraint firstItem="aaX-Qg-bx8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="124" id="Nnt-1p-adr"/>
+                            <constraint firstItem="VXU-ED-eYy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Nq8-m6-0Cd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aaX-Qg-bx8" secondAttribute="bottom" constant="123" id="OUJ-Aj-MEW"/>
+                            <constraint firstItem="VXU-ED-eYy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="QBD-Bb-48Y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aaX-Qg-bx8" secondAttribute="trailing" constant="15" id="W6P-Ah-WPq"/>
                             <constraint firstItem="dFF-PJ-VCe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="d3u-s9-fX4"/>
                             <constraint firstItem="aaX-Qg-bx8" firstAttribute="leading" secondItem="2aX-xd-aTX" secondAttribute="trailing" constant="-1" id="hBm-TT-phs"/>
