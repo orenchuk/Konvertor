@@ -54,11 +54,7 @@ final class APICurrencyManager: APIManager {
             // Prints json struct
             // print(json)
 
-            if let dictionary = json as? [String: AnyObject] {
-                return CurrentExchangeRate(JSON: dictionary)
-            } else {
-                return nil
-            }
+            return CurrentExchangeRate(JSON: json)
         }, completionHandler: completionHandler)
     }
 }

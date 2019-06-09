@@ -7,13 +7,16 @@
 //
 
 import UIKit
-class CurrencyListController {
+
+struct CurrencyListController {
+    
+    static let shared = CurrencyListController()
+    
     var currencyList: [Currency] {
         var permanentList = [Currency]()
-        for curName in currencyEnum.allCases {
-            permanentList.append(Currency(abbriviation: curName.rawValue, currencyName: currencyDict[curName.rawValue]!))
+        for currency in currencyEnum.allCases {
+            permanentList.append(Currency(abbriviation: currency.rawValue, currencyName: currency.description))
         }
         return permanentList
     }
-   
 }

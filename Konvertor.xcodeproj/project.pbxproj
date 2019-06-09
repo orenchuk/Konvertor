@@ -85,7 +85,7 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		7431B9CE21F99ACA009055A3 /* Model */ = {
+		7431B9CE21F99ACA009055A3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				7431B9CF21F99ADA009055A3 /* Currency.swift */,
@@ -93,7 +93,7 @@
 				748412EB21F9E1D2000E03D0 /* CurrencyList.swift */,
 				C7311BDD21F90A1E001AF62C /* CurrentCurrency.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		7431B9D121F99BC5009055A3 /* Extensions */ = {
@@ -138,7 +138,7 @@
 				C1AEB7AA21FBB83100120C84 /* TextDetection */,
 				C1EC661B21F9E36C009E98F9 /* CameraCapture */,
 				7431B9D121F99BC5009055A3 /* Extensions */,
-				7431B9CE21F99ACA009055A3 /* Model */,
+				7431B9CE21F99ACA009055A3 /* Models */,
 				7431B9CB21F99A34009055A3 /* Controller */,
 				C10F250221F795A500597CE2 /* View */,
 				C10F250121F7959100597CE2 /* Resources */,
@@ -249,6 +249,7 @@
 				TargetAttributes = {
 					C10F24EA21F784DD00597CE2 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -435,16 +436,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J92L4KR67J;
+				DEVELOPMENT_TEAM = 648A3N24L8;
 				INFOPLIST_FILE = "$(SRCROOT)/Konvertor/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ucu.ios.Konvertor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orenchuk.Konvertor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -454,16 +457,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J92L4KR67J;
+				DEVELOPMENT_TEAM = 648A3N24L8;
 				INFOPLIST_FILE = "$(SRCROOT)/Konvertor/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ucu.ios.Konvertor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orenchuk.Konvertor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

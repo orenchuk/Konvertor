@@ -16,7 +16,7 @@ class CameraCaptureViewController: UIViewController {
     
     // MARK: IBOutlets
     
-    @IBOutlet private weak var previewView: UIView!
+    @IBOutlet private weak var preview: UIView!
     @IBOutlet private weak var captureButtonOutlet: UIButton!
     
     // MARK: IBActions
@@ -30,13 +30,13 @@ class CameraCaptureViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        cameraController = CameraCaptureController(preview: previewView)
+        cameraController = CameraCaptureController(preview: preview)
         cameraController.configureSession()
         
         if let layer = cameraController.previewLayer {
             layer.position = view.layer.position
             layer.frame = view.frame
-            previewView.layer.addSublayer(layer)
+            preview.layer.addSublayer(layer)
             cameraController.session.startRunning()
         } else {
             print("Camera layer wasn't set yet")

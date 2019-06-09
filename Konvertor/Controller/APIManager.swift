@@ -32,7 +32,6 @@ protocol APIManager {
     
     func JSONTaskWith(request: URLRequest, completionHandler: @escaping JSONCompletionHandler) -> JSONTask
     func fetch<T: JSONDecodable>(request: URLRequest, parse: @escaping ([String: AnyObject]) -> T?, completionHandler: @escaping (APIResult<T>) -> Void)
-    
 }
 
 extension APIManager {
@@ -72,6 +71,7 @@ extension APIManager {
                 }
             }
         }
+        
         return dataTask
     }
     

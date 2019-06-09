@@ -17,14 +17,9 @@ class CameraCaptureController: NSObject {
     var preview: UIView?
     var previewLayer: AVCaptureVideoPreviewLayer?
     let session = AVCaptureSession()
+    
     private let liveTextDetection: LiveTextDetectionController?
-    
     private let videoDataOutputQueue = DispatchQueue(label: "VideoDataOutput")
-    
-    override init() {
-        self.preview = nil
-        self.liveTextDetection = nil
-    }
     
     init(preview: UIView) {
         self.preview = preview
@@ -34,7 +29,7 @@ class CameraCaptureController: NSObject {
     
     // MARK: Public methods
     
-    func checkPermission(completion: @escaping (Bool?) -> ()){
+    static func checkPermission(completion: @escaping (Bool?) -> ()){
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
             completion(true)
@@ -53,7 +48,7 @@ class CameraCaptureController: NSObject {
         }
     }
     
-    func changePermission(viewController vc: UIViewController) {
+    static func presentPermissionAlert(vc: UIViewController) {
         let alertController = UIAlertController(title: "Please change privacy settings", message: "No permission to use camera", preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -71,8 +66,13 @@ class CameraCaptureController: NSObject {
         
         // Input
         
-        let videoDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
-        guard let videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice!), session.canAddInput(videoDeviceInput) else {
+        guard let videoDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
+            session.commitConfiguration()
+            print("Device is not supported")
+            return
+        }
+        
+        guard let videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice), session.canAddInput(videoDeviceInput) else {
             session.commitConfiguration()
             print("Couldn't add video device input to the session.")
             return

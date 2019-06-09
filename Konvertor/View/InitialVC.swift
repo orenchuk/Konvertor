@@ -12,10 +12,9 @@ class InitialVC: UIViewController {
     
     // MARK: Properties
     
-    let controller = CurrencyListController()
+    let currencyController = CurrencyListController.shared
     var exchangeRate: CurrentExchangeRate?
     var currentButtonPressed: UIButton?
-    private let cameraController = CameraCaptureController()
     
     // MARK: IBOutlets
     
@@ -37,16 +36,13 @@ class InitialVC: UIViewController {
             currencyListTableView.isHidden = !currencyListTableView.isHidden
         }
         currentButtonPressed = sender
-    }    
-    
-    @IBAction func keyboardTrigger(_ sender: UITextField) {
     }
     
     @IBAction func photoDetectAction(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Camera", bundle: nil)
         let cameraVC = storyboard.instantiateViewController(withIdentifier: "CameraStoryboard")
         
-        cameraController.checkPermission { [unowned self] granted in
+        CameraCaptureController.checkPermission { [unowned self] granted in
             
             if let granted = granted {
                 if granted {
@@ -55,7 +51,7 @@ class InitialVC: UIViewController {
                     }
                 } else {
                     print("InitialVC: no permission to camera")
-                    self.cameraController.changePermission(viewController: self)
+                    CameraCaptureController.presentPermissionAlert(vc: self)
                 }
             } else {
                 print("Camera access denied")
@@ -65,16 +61,14 @@ class InitialVC: UIViewController {
     
  
     @IBAction func inputChanged(_ sender: UITextField) {
-        if let input = Double(amountInput.text!){
+        if let text = amountInput.text, let input = Double(text) {
         amountOutput.text = Converter.convert(inputCurrency: currencyInputButton.currentTitle!,
                                     amount: input,
                                     outputCurrency: currencyOutputButton.currentTitle!,
                                     currency: exchangeRate!)
         } else {
-            amountOutput.text = " "
+            amountOutput.text = "0.0"
         }
-            
-       
     }
     
     //add ApiKey
@@ -103,12 +97,6 @@ class InitialVC: UIViewController {
                                                          bottom: float,
                                                          right: float + extra)
 
-        
-        //Add padding to input UITextField
-        let View = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 15.0, height: 0.0))
-        amountInput.leftView = View
-        amountInput.rightView = View
-        amountInput.leftViewMode = .always
         //Adding cells to currency pop-up
         currencyListTableView.delegate = self
         currencyListTableView.dataSource = self
@@ -139,33 +127,32 @@ class InitialVC: UIViewController {
         }
     }
     
-    
 }
 
-extension InitialVC: UITableViewDelegate{
+extension InitialVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 55.0
     }
 }
 
-extension InitialVC: UITableViewDataSource{
+extension InitialVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return controller.currencyList.count
+        return currencyController.currencyList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let currentCurrency = controller.currencyList[indexPath.row]
+        let currentCurrency = currencyController.currencyList[indexPath.row]
         let cell = currencyListTableView.dequeueReusableCell(withIdentifier: "CurrencyCell", for: indexPath) as! CurrencyCell
         cell.currencyAbbriviation.text = currentCurrency.abbriviation
         cell.currencyName.text = currentCurrency.currencyName
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(controller.currencyList[indexPath.row].abbriviation)
-        currentButtonPressed!.setTitle(controller.currencyList[indexPath.row].abbriviation, for: .normal)
+        print(currencyController.currencyList[indexPath.row].abbriviation)
+        currentButtonPressed!.setTitle(currencyController.currencyList[indexPath.row].abbriviation, for: .normal)
         inputChanged(amountInput)
         currencyListTableView.isHidden = true
-        
     }
 
 }

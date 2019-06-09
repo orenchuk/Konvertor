@@ -10,8 +10,5 @@ import UIKit
 
 
 class AddNewCurrencyController {
-    func addNewCurrency(currency: Currency) {
-        
-    }
-
+    func addNewCurrency(currency: Currency) {}
 }
