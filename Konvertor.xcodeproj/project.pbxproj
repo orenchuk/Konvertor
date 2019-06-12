@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,14 +16,18 @@
 		748412C421F9CB21000E03D0 /* CurrencyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 748412C221F9CB21000E03D0 /* CurrencyCell.xib */; };
 		748412EC21F9E1D2000E03D0 /* CurrencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748412EB21F9E1D2000E03D0 /* CurrencyList.swift */; };
 		7484132B21FB22D9000E03D0 /* AddNewCurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484132A21FB22D9000E03D0 /* AddNewCurrencyController.swift */; };
+		C10E1F2922B0036300089C80 /* CIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10E1F2822B0036300089C80 /* CIImage+Extension.swift */; };
 		C10F24EF21F784DD00597CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10F24EE21F784DD00597CE2 /* AppDelegate.swift */; };
 		C10F24F621F784DE00597CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C10F24F521F784DE00597CE2 /* Assets.xcassets */; };
 		C10F250621F7965800597CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C10F250521F7965800597CE2 /* Main.storyboard */; };
 		C10F250821F7966E00597CE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C10F250721F7966E00597CE2 /* LaunchScreen.storyboard */; };
+		C1129C7C22B016C60076BE78 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = C1129C7B22B016C50076BE78 /* tessdata */; };
+		C1129C7E22B018210076BE78 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1129C7D22B018200076BE78 /* CoreImage.framework */; };
+		C16C2E0222AFBAF600FEAC6C /* CGRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16C2E0122AFBAF600FEAC6C /* CGRect+Extensions.swift */; };
 		C1AEB7A521FB3CEA00120C84 /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10F250321F7962D00597CE2 /* InitialVC.swift */; };
 		C1AEB7A921FB76A800120C84 /* CameraCaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AEB7A821FB76A800120C84 /* CameraCaptureController.swift */; };
 		C1AEB7AE21FBB8AA00120C84 /* LiveTextDetectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AEB7AD21FBB8AA00120C84 /* LiveTextDetectionController.swift */; };
-		C1EC661A21F9DB16009E98F9 /* CameraCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EC661921F9DB16009E98F9 /* CameraCaptureViewController.swift */; };
+		C1EC661A21F9DB16009E98F9 /* CameraCaptureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EC661921F9DB16009E98F9 /* CameraCaptureVC.swift */; };
 		C1EC661F21F9E824009E98F9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C1EC661E21F9E824009E98F9 /* README.md */; };
 		C1EC662121F9E83C009E98F9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C1EC662021F9E83C009E98F9 /* .gitignore */; };
 		C1EC662321F9EBB6009E98F9 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EC662221F9EBB6009E98F9 /* Camera.storyboard */; };
@@ -31,10 +35,14 @@
 		C7311BDA21F8F55B001AF62C /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7311BD921F8F55B001AF62C /* ErrorManager.swift */; };
 		C7311BDC21F909B7001AF62C /* APICurrencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7311BDB21F909B7001AF62C /* APICurrencyManager.swift */; };
 		C7311BDE21F90A1E001AF62C /* CurrentCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7311BDD21F90A1E001AF62C /* CurrentCurrency.swift */; };
+		EDF83C5EF17000DAAD4AE0E6 /* Pods_Konvertor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0BEFB9D0B042C389FCBA72 /* Pods_Konvertor.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07E35D47EDFBE36A80B129A2 /* Pods-Konvertor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Konvertor.debug.xcconfig"; path = "Target Support Files/Pods-Konvertor/Pods-Konvertor.debug.xcconfig"; sourceTree = "<group>"; };
+		0C6000A7B1161FBD6BDE5C1E /* Pods-Konvertor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Konvertor.release.xcconfig"; path = "Target Support Files/Pods-Konvertor/Pods-Konvertor.release.xcconfig"; sourceTree = "<group>"; };
 		5631365F21FA20CB00120DC0 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		5C0BEFB9D0B042C389FCBA72 /* Pods_Konvertor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Konvertor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7431B9CC21F99A4E009055A3 /* CurrencyListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListController.swift; sourceTree = "<group>"; };
 		7431B9CF21F99ADA009055A3 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		7431B9D221F99BF6009055A3 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
@@ -43,6 +51,7 @@
 		748412C221F9CB21000E03D0 /* CurrencyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyCell.xib; sourceTree = "<group>"; };
 		748412EB21F9E1D2000E03D0 /* CurrencyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyList.swift; sourceTree = "<group>"; };
 		7484132A21FB22D9000E03D0 /* AddNewCurrencyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCurrencyController.swift; sourceTree = "<group>"; };
+		C10E1F2822B0036300089C80 /* CIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+Extension.swift"; sourceTree = "<group>"; };
 		C10F24EB21F784DD00597CE2 /* Konvertor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Konvertor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10F24EE21F784DD00597CE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C10F24F521F784DE00597CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,9 +59,13 @@
 		C10F250321F7962D00597CE2 /* InitialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
 		C10F250521F7965800597CE2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C10F250721F7966E00597CE2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C1129C7B22B016C50076BE78 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		C1129C7D22B018200076BE78 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		C16C2E0122AFBAF600FEAC6C /* CGRect+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Extensions.swift"; sourceTree = "<group>"; };
 		C1AEB7A821FB76A800120C84 /* CameraCaptureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureController.swift; sourceTree = "<group>"; };
 		C1AEB7AD21FBB8AA00120C84 /* LiveTextDetectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTextDetectionController.swift; sourceTree = "<group>"; };
-		C1EC661921F9DB16009E98F9 /* CameraCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureViewController.swift; sourceTree = "<group>"; };
+		C1B5EB2F22B11DF5000EB71C /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "../../../../usr/lib/libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
+		C1EC661921F9DB16009E98F9 /* CameraCaptureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureVC.swift; sourceTree = "<group>"; };
 		C1EC661E21F9E824009E98F9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C1EC662021F9E83C009E98F9 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C1EC662221F9EBB6009E98F9 /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
@@ -67,12 +80,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1129C7E22B018210076BE78 /* CoreImage.framework in Frameworks */,
+				EDF83C5EF17000DAAD4AE0E6 /* Pods_Konvertor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1867097E89BC10E24C0D5ADF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				07E35D47EDFBE36A80B129A2 /* Pods-Konvertor.debug.xcconfig */,
+				0C6000A7B1161FBD6BDE5C1E /* Pods-Konvertor.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7431B9CB21F99A34009055A3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +125,8 @@
 			children = (
 				7431B9D221F99BF6009055A3 /* UITableView+Extensions.swift */,
 				7431B9D421F99EA8009055A3 /* UITableViewCell+Extension.swift */,
+				C16C2E0122AFBAF600FEAC6C /* CGRect+Extensions.swift */,
+				C10E1F2822B0036300089C80 /* CIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -114,6 +140,16 @@
 			path = CurrencyCell;
 			sourceTree = "<group>";
 		};
+		BE2F1FD4269C5FB92E14F97C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1B5EB2F22B11DF5000EB71C /* libstdc++.6.0.9.dylib */,
+				C1129C7D22B018200076BE78 /* CoreImage.framework */,
+				5C0BEFB9D0B042C389FCBA72 /* Pods_Konvertor.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C10F24E221F784DD00597CE2 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +157,8 @@
 				C10F24EC21F784DD00597CE2 /* Products */,
 				C1EC662021F9E83C009E98F9 /* .gitignore */,
 				C1EC661E21F9E824009E98F9 /* README.md */,
+				1867097E89BC10E24C0D5ADF /* Pods */,
+				BE2F1FD4269C5FB92E14F97C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +198,7 @@
 		C10F250121F7959100597CE2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C1129C7B22B016C50076BE78 /* tessdata */,
 				C10F24F521F784DE00597CE2 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -178,7 +217,7 @@
 		C1AEB7A621FB762D00120C84 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C1EC661921F9DB16009E98F9 /* CameraCaptureViewController.swift */,
+				C1EC661921F9DB16009E98F9 /* CameraCaptureVC.swift */,
 				C1EC662221F9EBB6009E98F9 /* Camera.storyboard */,
 			);
 			path = View;
@@ -224,9 +263,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C10F24FD21F784DE00597CE2 /* Build configuration list for PBXNativeTarget "Konvertor" */;
 			buildPhases = (
+				B49C91303E63A8BC7C702942 /* [CP] Check Pods Manifest.lock */,
 				C10F24E721F784DD00597CE2 /* Sources */,
 				C10F24E821F784DD00597CE2 /* Frameworks */,
 				C10F24E921F784DD00597CE2 /* Resources */,
+				094AD06F031BFC8135475364 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -277,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1EC662321F9EBB6009E98F9 /* Camera.storyboard in Resources */,
+				C1129C7C22B016C60076BE78 /* tessdata in Resources */,
 				748412C421F9CB21000E03D0 /* CurrencyCell.xib in Resources */,
 				C10F250821F7966E00597CE2 /* LaunchScreen.storyboard in Resources */,
 				C1EC661F21F9E824009E98F9 /* README.md in Resources */,
@@ -288,16 +330,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		094AD06F031BFC8135475364 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Konvertor/Pods-Konvertor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Konvertor/Pods-Konvertor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Konvertor/Pods-Konvertor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B49C91303E63A8BC7C702942 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Konvertor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C10F24E721F784DD00597CE2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C1AEB7A521FB3CEA00120C84 /* InitialVC.swift in Sources */,
+				C16C2E0222AFBAF600FEAC6C /* CGRect+Extensions.swift in Sources */,
 				748412C321F9CB21000E03D0 /* CurrencyCell.swift in Sources */,
 				7431B9D521F99EA8009055A3 /* UITableViewCell+Extension.swift in Sources */,
 				5631366021FA20CB00120DC0 /* Converter.swift in Sources */,
-				C1EC661A21F9DB16009E98F9 /* CameraCaptureViewController.swift in Sources */,
+				C1EC661A21F9DB16009E98F9 /* CameraCaptureVC.swift in Sources */,
 				7431B9D021F99ADA009055A3 /* Currency.swift in Sources */,
 				7431B9D321F99BF6009055A3 /* UITableView+Extensions.swift in Sources */,
 				7431B9CD21F99A4E009055A3 /* CurrencyListController.swift in Sources */,
@@ -309,6 +394,7 @@
 				748412EC21F9E1D2000E03D0 /* CurrencyList.swift in Sources */,
 				C7311BDA21F8F55B001AF62C /* ErrorManager.swift in Sources */,
 				C7311BDC21F909B7001AF62C /* APICurrencyManager.swift in Sources */,
+				C10E1F2922B0036300089C80 /* CIImage+Extension.swift in Sources */,
 				C10F24EF21F784DD00597CE2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +460,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -428,22 +515,36 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		C10F24FE21F784DE00597CE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07E35D47EDFBE36A80B129A2 /* Pods-Konvertor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 648A3N24L8;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Konvertor/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"z\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"TesseractOCR\"",
+					"-framework",
+					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.orenchuk.Konvertor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -455,16 +556,29 @@
 		};
 		C10F24FF21F784DE00597CE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C6000A7B1161FBD6BDE5C1E /* Pods-Konvertor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 648A3N24L8;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Konvertor/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"z\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"TesseractOCR\"",
+					"-framework",
+					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.orenchuk.Konvertor;
 				PRODUCT_NAME = "$(TARGET_NAME)";

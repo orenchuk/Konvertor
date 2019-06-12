@@ -40,7 +40,10 @@ class InitialVC: UIViewController {
     
     @IBAction func photoDetectAction(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Camera", bundle: nil)
-        let cameraVC = storyboard.instantiateViewController(withIdentifier: "CameraStoryboard")
+        let cameraVC = storyboard.instantiateViewController(withIdentifier: "CameraStoryboard") as! CameraCaptureVC
+        cameraVC.inputCurrency = currencyInputButton.currentTitle!
+        cameraVC.outCurrency = currencyOutputButton.currentTitle!
+        cameraVC.exangeRate = exchangeRate!
         
         CameraCaptureController.checkPermission { [unowned self] granted in
             
