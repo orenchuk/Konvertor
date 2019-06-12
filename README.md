@@ -1,3 +1,3 @@
 # Konvertor
 
-![](konvertor_demo.gif | width=100)
+<img src="konvertor_demo.gif" width="200"/>
