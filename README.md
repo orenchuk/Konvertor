@@ -1,4 +1,3 @@
 # Konvertor
 
-DEMO:
-![](konvertor_demo.gif)
+![](konvertor_demo.gif | width=100)
