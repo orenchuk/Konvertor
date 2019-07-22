@@ -1,17 +1,19 @@
 # Konvertor
 
+### Demo (animated)
+
 <p align="center">
     <img src="konvertor_demo.gif" width="200"/>
-    <em>Demo (animated)</em>
 </p>
 
-Idea: currency conversion iOS app with numbers recognition feature, bring your camera to a price label and find out the price in your local currency.
+### Idea 
+currency conversion iOS app with numbers recognition feature, bring your camera to a price label and find out the price in your local currency.
 
-ML part: 
+### ML part 
 - text detection using Apple's Vision framework
 - numbers recognition with TesseractOCRiOS library (Tesseract got better results comparing to Apple's SwiftOCR)
 
-TODO:
+### TODO
 - improve numbers recognition with bad lighting conditions
 - impove text detection when other text strings get into frame
 - display converted number to screen
