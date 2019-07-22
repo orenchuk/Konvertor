@@ -1,7 +1,7 @@
 # Konvertor
 
 *Demo (animated)*
-<p align="center>
+<p align="center">
     <img src="konvertor_demo.gif" width="200"/>
 </p>
 
