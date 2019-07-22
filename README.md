@@ -1,7 +1,7 @@
 # Konvertor
 
-Demo (animated)
 <img src="konvertor_demo.gif" width="200"/>
+Demo (animated)
 
 Idea: currency conversion iOS app with numbers recognition feature, bring your camera to a price label and find out the price in your local currency.
 
